@@ -349,8 +349,8 @@ function resizeCanvas(aboutToEnterFullscreen) {
 	_emscripten_set_canvas_element_size(Module['canvas'].id, newRenderTargetWidth, newRenderTargetHeight);
 //	emscripten_set_canvas_element_size_js(Module['canvas'].id, newRenderTargetWidth, newRenderTargetHeight);
 
-	Module['canvas'].style.width = cssWidth + 'px';
-	Module['canvas'].style.height = mainArea.style.height = cssHeight + 'px';
+	Module['canvas'].style.width = '100vw';
+	Module['canvas'].style.height = '100vh';
 
 	// Tell the engine that the web page has changed the size of the WebGL render target on the canvas (Module['canvas'].width/height).
 	// This will update the GL viewport and propagate the change throughout the engine.

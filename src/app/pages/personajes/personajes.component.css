@@ -36,4 +36,5 @@
 .second-off,
 .second-on {
   position: absolute;
+  cursor: pointer;
 }

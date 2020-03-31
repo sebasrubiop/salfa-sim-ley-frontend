@@ -49,7 +49,7 @@ html, body, .container {
 
 .wrapper {
 	position: relative;
-	margin: 1em auto 10px auto;
+	margin: 0;
 	text-align: center;
 	min-width: 640px;
 	width: 100%;

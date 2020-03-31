@@ -1,38 +1,41 @@
-
 .right-area {
-    flex: 2.5;
-    justify-content: center;    
+  flex: 2.5;
+  justify-content: center;
 }
 
 .responsive-img {
-    max-width: 35vw;
-    width: 100%;
-    @media(min-width: 1500px) {
-        max-width: 70vw;
-    }
+  max-width: 35vw;
+  width: 100%;
+
+  @media(min-width: 1500px) {
+    max-width: 70vw;
+  }
 }
 
 .first-avatar,
 .second-avatar {
-    position: relative;
-    display: flex;
-    flex: 1;
+  position: relative;
+  display: flex;
+  flex: 1;
 }
 
 .container {
-    display: flex;
-    height: 25vh;
-    @media(max-width: 1050px) {
-        height: 35vh;
-    }
-    @media(max-width: 900px) {
-        height: 50vh;
-    }
+  display: flex;
+  height: 25vh;
+
+  @media(max-width: 1050px) {
+    height: 35vh;
+  }
+
+  @media(max-width: 900px) {
+    height: 50vh;
+  }
 }
 
 .first-off,
 .first-on,
 .second-off,
 .second-on {
-position: absolute;
+  position: absolute;
+  cursor: pointer;
 }
