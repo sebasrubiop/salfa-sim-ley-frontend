@@ -1,0 +1,14 @@
+:host{
+  .simulador{
+    position: absolute;
+    top: 0px;
+    z-index: -10;
+    height: 100%;
+    width: 100%;
+  }
+  .presentacion{
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+  }
+}
