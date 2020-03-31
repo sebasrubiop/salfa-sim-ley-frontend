@@ -1,42 +1,12 @@
-.main{
-    display: flex;
-    .img-container{
-        max-height: fit-content;
-        max-width: fit-content;
-        width: 150%;
-        img{
-            height: 100%;
-            max-width: 200%;
-        }
-    }
-    .img-text-container{
-        img{
-            @media (max-width: 950px){
-                right: 0;
-                width: 20rem;
-            }
-            position: absolute;
-            right: 5%;
-            top: 10%;
-            width: 30rem;
-            max-width: fit-content;
-        }
-    }
-    .text-container{
-        text-align: start;
-        p{
-            @media (max-width: 1050px){
-                margin-left:40% ;
-            }
-            margin: 20%;
-            line-height: 2rem;
-            font-size: large;
-        }
-    }
+.responsive-img {
+    max-width: 40vw;
+    width: 100%;
+}
 
-    app-footer{
-        position: absolute;
-        bottom: 0;
-        right: 0;
-    }
+.text-container {
+    font-size: 4vh;
+}
+
+.right-area {
+    padding-top: 10vh;
 }
