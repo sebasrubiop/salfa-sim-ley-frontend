@@ -1,0 +1,11 @@
+.responsive-img {
+  max-width: 40vw;
+  width: 100%;
+}
+.text-container {
+  font-size: 4vh;
+  padding: 0 2rem;
+}
+.right-area {
+  padding-top: 10vh;
+}

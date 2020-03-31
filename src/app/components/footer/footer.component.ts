@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class FooterComponent implements OnInit {
 
+    @Output() action: EventEmitter<any> = new EventEmitter()
     url: string
     continuar: boolean
     comenzar: boolean
@@ -30,5 +31,16 @@ export class FooterComponent implements OnInit {
             this.comenzar = !this.comenzar
             this.continuar = false
         } 
+    }
+
+    goTo() {
+        if(this.url === '/home') {
+            this.router.navigate(['/personajes'])
+        }
+        if(this.url === '/personajes') {
+            this.router.navigate(['/instrucciones'])
+        } if(this.url === '/instrucciones') {
+            this.action.emit('next')
+        }
     }
 }

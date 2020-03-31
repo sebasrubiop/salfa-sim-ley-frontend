@@ -18,8 +18,11 @@ export class InstruccionesComponent implements OnInit {
     this.instrucciones = 1;
   }
 
-  onClick(){
-    this.instrucciones++ ;
+  onAction(event){
+    if(event === 'next'){
+      this.instrucciones++ ;
+    }
+    
   }
   
 }
