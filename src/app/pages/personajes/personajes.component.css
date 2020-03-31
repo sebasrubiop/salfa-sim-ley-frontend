@@ -1,7 +1,39 @@
 .right-area {
-  flex: 1.5;
+  flex: 2.5;
+  justify-content: center;
 }
 .responsive-img {
-  max-width: 300px;
+  max-width: 35vw;
   width: 100%;
+}
+@media (min-width: 1500px) {
+  .responsive-img {
+    max-width: 70vw;
+  }
+}
+.first-avatar,
+.second-avatar {
+  position: relative;
+  display: flex;
+  flex: 1;
+}
+.container {
+  display: flex;
+  height: 25vh;
+}
+@media (max-width: 1050px) {
+  .container {
+    height: 35vh;
+  }
+}
+@media (max-width: 900px) {
+  .container {
+    height: 50vh;
+  }
+}
+.first-off,
+.first-on,
+.second-off,
+.second-on {
+  position: absolute;
 }

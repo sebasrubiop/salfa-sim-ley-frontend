@@ -7,10 +7,23 @@ import { Component, OnInit } from '@angular/core'
 })
 export class PersonajesComponent implements OnInit {
 
+    first: boolean
+    second: boolean
   constructor(
   ) {
   }
 
   ngOnInit() {
+  }
+
+  onAvatar(avatar: string) {
+    if(avatar === 'first'){
+        this.first = !this.first
+        this.second = false
+    } 
+    if(avatar === 'second'){
+        this.second = !this.second
+        this.first = false
+    } 
   }
 }

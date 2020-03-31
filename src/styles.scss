@@ -3,25 +3,29 @@
 }
 
 body {
-    margin: 0;
+  margin: 0;
 }
 
 .bg-img {
-    background-color: #cccccc;
-    min-height: 100vh;
-    max-width: 100vw;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    position: relative;
-  }
+  background-color: #cccccc;
+  min-height: 100vh;
+  max-width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 .container {
-    display: flex;
+  display: flex;
+  height: -webkit-fill-available;
+  align-items: center;
 }
 
 .left-area,
 .right-area {
-    display: flex;
-    flex: 1;
+  display: flex;
+  flex: 1;
 }

@@ -1,0 +1,27 @@
+:host {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 10px 25px;
+  align-items: center;
+}
+.responsive-img {
+  height: 100%;
+  width: 12vw;
+}
+@media (max-width: 1050px) {
+  .responsive-img {
+    width: 8rem;
+  }
+}
+.continuar,
+.comenzar {
+  position: relative;
+  height: 12vh;
+  width: 13vw;
+}
+.continuar-off,
+.continuar-hover,
+.comenzar-off,
+.comenzar-hover {
+  position: absolute;
+}

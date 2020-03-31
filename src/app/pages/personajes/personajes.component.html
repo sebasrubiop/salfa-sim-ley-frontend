@@ -1,11 +1,22 @@
 <div class="bg-img" style="background-image: url(/assets/imgs/ui/SALFA_UI_SELECCION-02.png);">
-<div class="container">
-    <div class="left-area">
+    <div class="container">
+        <div class="left-area">
 
+        </div>
+        <div class="right-area">
+            <div class="first-avatar">
+                <img src="/assets/imgs/ui/SALFA_UI_AVATAR_MASC_OFF.png" [style.z-index]="!first ? 1: 0"
+                    class="responsive-img first-off" (click)="onAvatar('first')" alt="">
+                <img src="/assets/imgs/ui/SALFA_UI_AVATAR_MASC_ON.png" [style.z-index]="first ? 1: 0"
+                    class="responsive-img first-on" (click)="onAvatar('first')" alt="">
+            </div>
+            <div class="second-avatar">
+                <img src="/assets/imgs/ui/SALFA_UI_AVATAR_FEM_OFF.png" [style.z-index]="!second ? 1: 0"
+                    class="responsive-img second-off" (click)="onAvatar('second')" alt="">
+                <img src="/assets/imgs/ui/SALFA_UI_AVATAR_FEM_ON.png" [style.z-index]="second ? 1: 0"
+                    class="responsive-img second-on" (click)="onAvatar('second')" alt="">
+            </div>
+        </div>
     </div>
-    <div class="right-area">
-        <img src="/assets/imgs/ui/SALFA_UI_SHERLOCK_MASC_OFF.png" class="responsive-img" alt="">
-        <img src="/assets/imgs/ui/SALFA_UI_SHERLOCK_FEM_OFF.png" class="responsive-img" alt="">
-    </div>
-</div>
+    <app-footer></app-footer>
 </div>
