@@ -6,11 +6,11 @@
 }
 .responsive-img {
   height: 100%;
-  width: 12vw;
+  width: 13vw;
 }
 @media (max-width: 1050px) {
   .responsive-img {
-    width: 8rem;
+    width: 9rem;
   }
 }
 .continuar,

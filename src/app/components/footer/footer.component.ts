@@ -31,4 +31,15 @@ export class FooterComponent implements OnInit {
             this.continuar = false
         } 
     }
+
+    goTo() {
+        if(this.url === '/home') {
+            this.router.navigate(['/personajes'])
+        }
+        if(this.url === '/personajes') {
+            this.router.navigate(['/instrucciones'])
+        } else {
+            console.log(this.url)
+        }
+    }
 }

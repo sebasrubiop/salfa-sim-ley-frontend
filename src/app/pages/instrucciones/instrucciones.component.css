@@ -1,0 +1,43 @@
+.main {
+  display: flex;
+}
+.main .img-container {
+  max-height: fit-content;
+  max-width: fit-content;
+  width: 150%;
+}
+.main .img-container img {
+  height: 100%;
+  max-width: 200%;
+}
+.main .img-text-container img {
+  position: absolute;
+  right: 5%;
+  top: 10%;
+  width: 30rem;
+  max-width: fit-content;
+}
+@media (max-width: 950px) {
+  .main .img-text-container img {
+    right: 0;
+    width: 20rem;
+  }
+}
+.main .text-container {
+  text-align: start;
+}
+.main .text-container p {
+  margin: 20%;
+  line-height: 2rem;
+  font-size: large;
+}
+@media (max-width: 1050px) {
+  .main .text-container p {
+    margin-left: 40%;
+  }
+}
+.main app-footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
