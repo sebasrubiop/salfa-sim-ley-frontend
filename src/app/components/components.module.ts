@@ -4,8 +4,8 @@ import { RouterModule } from '@angular/router';
 
 import { FooterComponent } from './footer/footer.component';
 
-const components =[
-    FooterComponent
+const components = [
+  FooterComponent
 ]
 
 @NgModule({
@@ -16,7 +16,7 @@ const components =[
     CommonModule,
     RouterModule,
   ],
-  exports:[
+  exports: [
     components
   ]
 })

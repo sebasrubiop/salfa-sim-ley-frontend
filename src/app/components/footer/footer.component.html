@@ -1,16 +1,16 @@
 <ng-container *ngIf="url !== '/home'">
     <div class="continuar">
-        <img src="/assets/imgs/ui/SALFA_UI_BTN_CONTINUAR_OFF.png" (mouseover)="onHover('continuar')"  [style.z-index]="!continuar ? 1: 0"
-            class="responsive-img continuar-off" alt="">
-        <img src="/assets/imgs/ui/SALFA_UI_BTN_CONTINUAR_HOVER.png" (mouseleave)="onHover('continuar')" (click)="goTo()" [style.z-index]="continuar ? 1: 0"
-            class="responsive-img continuar-hover" alt="">
+        <img src="/assets/imgs/ui/SALFA_UI_BTN_CONTINUAR_OFF.png" (mouseover)="onHover('continuar')"
+            [style.z-index]="!continuar ? 1: 0" class="responsive-img continuar-off" alt="">
+        <img src="/assets/imgs/ui/SALFA_UI_BTN_CONTINUAR_HOVER.png" (mouseleave)="onHover('continuar')" (click)="goTo()"
+            [style.z-index]="continuar ? 1: 0" class="responsive-img continuar-hover" alt="">
     </div>
 </ng-container>
 <ng-container *ngIf="url === '/home'">
     <div class="comenzar">
-        <img src="/assets/imgs/ui/SALFA_UI_BTN_COMENZAR_OFF.png" (mouseover)="onHover('comenzar')" [style.z-index]="!comenzar ? 1: 0"
-            class="responsive-img comenzar-off" alt="">
-        <img src="/assets/imgs/ui/SALFA_UI_BTN_COMENZAR_HOVER.png"  (mouseleave)="onHover('comenzar')" (click)="goTo()" [style.z-index]="comenzar ? 1: 0"
-            class="responsive-img comenzar-hover"  alt="">
+        <img src="/assets/imgs/ui/SALFA_UI_BTN_COMENZAR_OFF.png" (mouseover)="onHover('comenzar')"
+            [style.z-index]="!comenzar ? 1: 0" class="responsive-img comenzar-off" alt="">
+        <img src="/assets/imgs/ui/SALFA_UI_BTN_COMENZAR_HOVER.png" (mouseleave)="onHover('comenzar')" (click)="goTo()"
+            [style.z-index]="comenzar ? 1: 0" class="responsive-img comenzar-hover" alt="">
     </div>
 </ng-container>

@@ -1,5 +1,5 @@
 <router-outlet class="presentacion"></router-outlet>
-<div class="simulador" >
-  <iframe src="" iframeAutoHeight></iframe>
+<div class="simulador" [style.z-index]="showSim ? 10 : -10">
+  <iframe src="assets/sim/index.html" style="position: relative; height: 100%; width: 100%;"></iframe>
 </div>
 
