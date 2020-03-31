@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-instrucciones',
@@ -7,10 +8,18 @@ import { Component, OnInit } from '@angular/core'
 })
 export class InstruccionesComponent implements OnInit {
 
-  constructor(
+  instrucciones: number ;
+
+  constructor( private router: Router
   ) {
   }
 
   ngOnInit() {
+    this.instrucciones = 1;
   }
+
+  onClick(){
+    this.instrucciones++ ;
+  }
+  
 }

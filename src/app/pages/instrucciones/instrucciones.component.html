@@ -3,12 +3,15 @@
     <div class="img-container">
         <img src="/assets/imgs/ui/SALFA_UI_INSTRUCCIONES.png" alt="">
     </div>
-    <div class="img-text-container">
+    
+    <div *ngIf="instrucciones === 1" class="img-text-container">
         <img src="/assets/imgs/ui/SALFA_UI_TXT_AYUDA.png" alt="" class="text">
     </div>
-    <!-- <div class="text-container">
+
+    <div *ngIf="instrucciones !== 1" class="text-container">
                 <p>En esta actividad aprenderás a identificar delitos descritos en la Ley Nº20.393, los que pueden ser tremendamente perjudiciales para SALFA y todos sus colaboradores.
                     Para lograrlo, te invitamos a que resuelvas 3 escenarios con casos de delitos en instalaciones de SALFA: <br><br>
                     Pon mucha atención a las pistas y resuelve todos los casos.</p>
-    </div> -->
+    </div>
+    <app-footer (click)="onClick()"></app-footer>
 </div>
