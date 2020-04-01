@@ -17,6 +17,7 @@ export class PresentacionComponent implements OnInit {
 
     ngOnInit() {
         this.count(3)
+        // TODO: usar metodo del simulador para cambiar a esta vista
         setTimeout(()=>{
             this.router.navigate(['/simulador'])
         },15000)
