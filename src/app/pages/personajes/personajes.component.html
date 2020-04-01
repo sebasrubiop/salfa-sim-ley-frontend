@@ -1,26 +1,26 @@
-<div class="bg-img" style="background-image: url(/assets/imgs/ui/SALFA_UI_SELECCION-02.png);">
-    <div class="container">
-        <div class="left-area">
+<div class="bg-img" style="background-image: url(assets/imgs/ui/SALFA_UI_SELECCION-02.jpg);">
+  <div class="container">
+    <div class="left-area">
 
-        </div>
-        <div class="right-area">
-            <div class="first-avatar">
-                <img src="/assets/imgs/ui/SALFA_UI_AVATAR_MASC_OFF.png" [style.z-index]="!first ? 1: 0"
-                    class="responsive-img first-off" (mouseover)="onAvatarOver('first')" alt="">
-                <img src="/assets/imgs/ui/SALFA_UI_AVATAR_MASC_ON.png" [style.z-index]="first ? 2: 0"
-                    class="responsive-img first-on" (click)="onAvatar('first')" alt="">
-                <img src="/assets/imgs/ui/SALFA_UI_AVATAR_MASC_OVER.png" [style.z-index]="firstOver ? 1: 0"
-                    class="responsive-img first-on" (click)="onAvatar('first')" (mouseleave)="onAvatarOver('first')" alt="">
-            </div>
-            <div class="second-avatar">
-                <img src="/assets/imgs/ui/SALFA_UI_AVATAR_FEM_OFF.png" [style.z-index]="!second ? 1: 0"
-                    class="responsive-img second-off" (mouseover)="onAvatarOver('second')" alt="">
-                <img src="/assets/imgs/ui/SALFA_UI_AVATAR_FEM_ON.png" [style.z-index]="second ? 2: 0"
-                    class="responsive-img second-on" (click)="onAvatar('second')" alt="">
-                <img src="/assets/imgs/ui/SALFA_UI_AVATAR_FEM_OVER.png" [style.z-index]="secondOver ? 1: 0"
-                    class="responsive-img first-on" (click)="onAvatar('second')" (mouseleave)="onAvatarOver('second')" alt="">
-            </div>
-        </div>
     </div>
-    <app-footer></app-footer>
+    <div class="right-area">
+      <div class="first-avatar">
+        <img src="assets/imgs/ui/SALFA_UI_AVATAR_MASC_OFF.png" [style.z-index]="!first ? 1: 0"
+          class="responsive-img first-off" (mouseover)="onAvatarOver('first')" alt="">
+        <img src="assets/imgs/ui/SALFA_UI_AVATAR_MASC_ON.png" [style.z-index]="first ? 2: 0"
+          class="responsive-img first-on" (click)="onAvatar('first')" alt="">
+        <img src="assets/imgs/ui/SALFA_UI_AVATAR_MASC_OVER.png" [style.z-index]="firstOver ? 1: 0"
+          class="responsive-img first-on" (click)="onAvatar('first')" (mouseleave)="onAvatarOver('first')" alt="">
+      </div>
+      <div class="second-avatar">
+        <img src="assets/imgs/ui/SALFA_UI_AVATAR_FEM_OFF.png" [style.z-index]="!second ? 1: 0"
+          class="responsive-img second-off" (mouseover)="onAvatarOver('second')" alt="">
+        <img src="assets/imgs/ui/SALFA_UI_AVATAR_FEM_ON.png" [style.z-index]="second ? 2: 0"
+          class="responsive-img second-on" (click)="onAvatar('second')" alt="">
+        <img src="assets/imgs/ui/SALFA_UI_AVATAR_FEM_OVER.png" [style.z-index]="secondOver ? 1: 0"
+          class="responsive-img first-on" (click)="onAvatar('second')" (mouseleave)="onAvatarOver('second')" alt="">
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
 </div>
