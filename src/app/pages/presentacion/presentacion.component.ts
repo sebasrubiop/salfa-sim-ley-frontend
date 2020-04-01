@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { range, interval } from 'rxjs'
-import { map, take, switchMap } from 'rxjs/operators'
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-presentacion',
@@ -12,11 +11,15 @@ export class PresentacionComponent implements OnInit {
     timer = 3
 
     constructor(
+        private router: Router,
     ) {
     }
 
     ngOnInit() {
         this.count(3)
+        setTimeout(()=>{
+            this.router.navigate(['/simulador'])
+        },15000)
     }
 
     count(n) {
