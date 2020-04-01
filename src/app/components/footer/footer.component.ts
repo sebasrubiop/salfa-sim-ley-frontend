@@ -42,7 +42,7 @@ export class FooterComponent implements OnInit {
             this.router.navigate(['/instrucciones'])
         } if (this.url === '/instrucciones') {
             console.log('instruccionCount', this.instruccionCount)
-            if (this.instruccionCount > 2) {
+            if (this.instruccionCount > 1) {
                 this.router.navigate(['/simulador'])
             } else {
                 this.action.emit('next')
