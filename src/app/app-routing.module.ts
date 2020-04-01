@@ -4,6 +4,7 @@ import { InstruccionesComponent } from './pages/instrucciones/instrucciones.comp
 import { PersonajesComponent } from './pages/personajes/personajes.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SimuladorComponent } from './pages/simulador/simulador.component';
+import { PresentacionComponent } from './pages/presentacion/presentacion.component';
 
 
 const routes: Routes = [
@@ -29,6 +30,10 @@ const routes: Routes = [
     component: SimuladorComponent
   },
   {
+    path: "presentacion",
+    component: PresentacionComponent
+  },
+  {
     path: "**",
     redirectTo: "instrucciones",
     pathMatch: "full"
@@ -46,4 +51,5 @@ export const routedComponents = [
   PersonajesComponent,
   HomeComponent,
   SimuladorComponent,
+  PresentacionComponent,
 ]
