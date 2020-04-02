@@ -26,6 +26,8 @@ export class PresentacionComponent implements OnInit {
         setTimeout(() => {
             this.showMessages = true
         }, 15000)
+
+        //TODO: watch localstorage con estado de simulador ready --- cambiar este metodo!
         this.storageService.watchStorage().subscribe((data: string) => {
             console.log('presentacion', data)
             if (data == 'Ready' && this.showMessages) {
