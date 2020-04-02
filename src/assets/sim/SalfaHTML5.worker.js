@@ -80,7 +80,6 @@ Module['instantiateWasm'] = function(info, receiveInstance) {
 function getJSMessage(query)
 {
   console.log(query);
-  $.jStorage.set('simulador', query);
     var test = 'test';
     return test;
 }
