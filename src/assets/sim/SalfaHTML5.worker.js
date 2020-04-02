@@ -79,7 +79,9 @@ Module['instantiateWasm'] = function(info, receiveInstance) {
 
 function getJSMessage(query)
 {
-	console.log(query);
+  console.log(query);
+  const windowGlobal = typeof window !== 'undefined' && window
+  windowGlobal.localStorage.setItem('simulador', query);
     var test = 'test';
     return test;
 }
