@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "baseHref": "/resources/5e74af5b69e08b731dc23e19/",
+            "baseHref": "/resources/5e74af5b69e08b731dc23e19-copy/",
             "outputPath": "dist/salfa-sim-ley-frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
