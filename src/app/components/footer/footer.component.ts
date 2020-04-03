@@ -41,7 +41,6 @@ export class FooterComponent implements OnInit {
         if (this.url === '/personajes') {
             this.router.navigate(['/instrucciones'])
         } if (this.url === '/instrucciones') {
-            console.log('instruccionCount', this.instruccionCount)
             if (this.instruccionCount > 1) {
                 this.router.navigate(['/presentacion'])
             } else {

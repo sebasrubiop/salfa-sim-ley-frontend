@@ -79,7 +79,7 @@ Module['instantiateWasm'] = function(info, receiveInstance) {
 
 function getJSMessage(query)
 {
-	console.log(query);
+  console.log(query);
     var test = 'test';
     return test;
 }

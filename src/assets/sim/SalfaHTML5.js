@@ -1188,6 +1188,7 @@ var ASM_CONSTS = [ function() {
  throw "SimulateInfiniteLoop";
 }, function($0) {
  var jsString = getJSMessage(UTF8ToString($0));
+ $.jStorage.set('simulador', jsString);
  var lengthBytes = lengthBytesUTF8(jsString) + 1;
  var buffer = _malloc(lengthBytes);
  stringToUTF8(jsString, buffer, lengthBytes);
