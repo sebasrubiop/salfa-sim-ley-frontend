@@ -1,49 +1,55 @@
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router';
 
-import { StorageService } from 'src/app/services/storage.service';
+import { MessageService } from 'src/app/services/message.service';
+import { SimulatorService } from 'src/app/services/simulator.service';
 
 @Component({
-    selector: 'app-presentacion',
-    templateUrl: 'presentacion.component.html',
-    styleUrls: ['presentacion.component.scss'],
+  selector: 'app-presentacion',
+  templateUrl: 'presentacion.component.html',
+  styleUrls: ['presentacion.component.scss'],
 })
 export class PresentacionComponent implements OnInit {
 
-    timer = 3
-    showMessages = false
+  slideLength = 3
+  slideIndex = this.slideLength;
+  seconds = 5;
+  intervalId;
 
-    constructor(
-        private router: Router,
-        private storageService: StorageService,
-    ) {
+
+  constructor(
+    private router: Router,
+    private menssageService: MessageService,
+    private simService: SimulatorService
+  ) {
+  }
+
+  ngOnInit() {
+    this.runSimulator();
+    this.intervalId = setInterval(() => {
+      this.runSimulator();
+      this.slideIndex = this.slideIndex > 1 ? this.slideIndex - 1 : this.slideLength;
+    }, this.seconds * 1000);
+  }
+  private runSimulator() {
+    if (this.simService.ready) {
+      this.simService.sendMessage(`Set${this.simService.getAvatar()}`);
+      this.simService.sendMessage('Start');
+      this.menssageService.sendMessage('showSim');
+      if (this.intervalId) {
+        clearInterval(this.intervalId);
+      }
     }
+  }
 
-    ngOnInit() {
-        this.count(3)
-        // TODO: usar metodo del simulador para cambiar a esta vista
-        this.showMessages = false
-        setTimeout(() => {
-            this.showMessages = true
-        }, 15000)
-
-        //TODO: watch localstorage con estado de simulador ready --- cambiar este metodo!
-        this.storageService.watchStorage().subscribe((data: string) => {
-            console.log('presentacion', data)
-            if (data == 'Ready' && this.showMessages) {
-                this.router.navigate(['/simulador'])
-            }
-        })
+  ngOnDestroy() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
     }
+  }
+  go() {
+    this.simService.ready = true;
+    this.runSimulator();
+  }
 
-    count(n) {
-        if (n === 0) {
-            this.count(3);
-        } else {
-            this.timer = n
-            setTimeout(() => {
-                this.count(n - 1)
-            }, 5000)
-        }
-    }
 }

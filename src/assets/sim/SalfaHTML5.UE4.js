@@ -73,7 +73,7 @@ var Module = {
 	assetDownloadProgress: {}, // Track how many bytes of each needed asset has been downloaded so far.
 
 	UE4_indexedDBName: 'UE4_assetDatabase_SalfaHTML5', // this should be an ascii ID string without special characters that is unique to the project that is being packaged
-	UE4_indexedDBVersion: 202003271820, // Bump this number to invalidate existing IDB storages in browsers.
+	UE4_indexedDBVersion: 202004151521, // Bump this number to invalidate existing IDB storages in browsers.
 };
 
 
@@ -161,17 +161,17 @@ var heuristic64BitBrowser = heuristicIs64Bit('browser');
 // // fragment the memory area of the browser process.
 // var pageSize = 64 * 1024;
 // function alignPageUp(size) { return pageSize * Math.ceil(size / pageSize); }
-// 
+//
 // // The absolute maximum that is possible is one memory page short of 2GB.
 // var MAX_MEMORY = Module['UE4_MultiThreaded']
 // 					? 512 * 1024 * 1024					// multi  threaded - non-growable
 // 					: 2048 * 1024 * 1024 - pageSize;	// single threaded - growable
-// 
+//
 // // note: 32-bit browsers (single threaded) needs to start at 32MB
 // var MIN_MEMORY = Module['UE4_MultiThreaded']
 // 					? 512 * 1024 * 1024		// multi  threaded - non-growable
 // 					:  32 * 1024 * 1024;	// single threaded - growable
-// 
+//
 // function allocateHeap() {
 // 	Module['wasmMemory'] = new WebAssembly.Memory({ initial: MIN_MEMORY / pageSize, maximum: MAX_MEMORY / pageSize });
 // 	if (!Module['wasmMemory']||!Module['wasmMemory'].buffer) {
@@ -186,7 +186,7 @@ var heuristic64BitBrowser = heuristicIs64Bit('browser');
 // }
 // allocateHeap();
 // Module['MAX_MEMORY'] = MAX_MEMORY;
-// 
+//
 // function MB(x) { return (x/1024/1024) + 'MB'; }
 // console.log('Initial memory size: ' + MB(Module['TOTAL_MEMORY']) + ' (MIN_MEMORY: ' + MB(MIN_MEMORY) + ', MAX_MEMORY: ' + MB(MAX_MEMORY) + ', heuristic64BitBrowser: ' + heuristic64BitBrowser + ', heuristic64BitOS: ' + heuristicIs64Bit('os') + ')');
 
@@ -268,7 +268,7 @@ function detectWebGL() {
 // Canvas scaling mode should be set to one of: 1=STRETCH, 2=ASPECT, or 3=FIXED.
 // This dictates how the canvas size changes when the browser window is resized
 // by dragging from the corner.
-var canvasWindowedScaleMode = 2 /*ASPECT*/;
+var canvasWindowedScaleMode = 3 /*ASPECT*/;
 
 // High DPI setting configures whether to match the canvas size 1:1 with
 // the physical pixels on the screen.
@@ -281,13 +281,14 @@ var canvasWindowedUseHighDpi = true;
 // If canvasWindowedScaleMode == 2 (ASPECT), this size defines only the aspect ratio
 //                                           that the canvas will be constrained to.
 // If canvasWindowedScaleMode == 1 (STRETCH), these size values are ignored.
-var canvasAspectRatioWidth = 1366;
-var canvasAspectRatioHeight = 768;
+var canvasAspectRatioWidth = window.innerWidth;
+var canvasAspectRatioHeight = window.innerHeight;
 
 
 // The resizeCanvas() function recomputes the canvas size on the page as the user changes
 // the browser window size.
 function resizeCanvas(aboutToEnterFullscreen) {
+  console.log('mensaje entro a resizecanvas')
 	// Configuration variables, feel free to play around with these to tweak.
 	var minimumCanvasHeightCssPixels = 480; // the visible size of the canvas should always be at least this high (in CSS pixels)
 	var minimumCanvasHeightFractionOfBrowserWindowHeight = 0.65; // and also vertically take up this much % of the total browser client area height.
@@ -349,8 +350,8 @@ function resizeCanvas(aboutToEnterFullscreen) {
 	_emscripten_set_canvas_element_size(Module['canvas'].id, newRenderTargetWidth, newRenderTargetHeight);
 //	emscripten_set_canvas_element_size_js(Module['canvas'].id, newRenderTargetWidth, newRenderTargetHeight);
 
-	Module['canvas'].style.width = '100vw';
-	Module['canvas'].style.height = '100vh';
+	Module['canvas'].style.width = cssWidth + 'px';
+	Module['canvas'].style.height = mainArea.style.height = cssHeight + 'px';
 
 	// Tell the engine that the web page has changed the size of the WebGL render target on the canvas (Module['canvas'].width/height).
 	// This will update the GL viewport and propagate the change throughout the engine.

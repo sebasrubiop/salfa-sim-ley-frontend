@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 
 const components = [
-  FooterComponent
+  FooterComponent,
 ]
 
 @NgModule({

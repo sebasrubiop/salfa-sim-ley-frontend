@@ -20,6 +20,9 @@ export class InstruccionesComponent implements OnInit {
     if (event === 'next') {
       this.instrucciones++;
     }
+    if (event === 'prev') {
+      this.instrucciones--;
+    }
   }
 
 }

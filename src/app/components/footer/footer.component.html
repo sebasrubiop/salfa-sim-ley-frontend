@@ -1,9 +1,17 @@
 <ng-container *ngIf="url !== '/home'">
+
   <div class="continuar">
     <img src="assets/imgs/ui/SALFA_UI_BTN_CONTINUAR_OFF.png" (mouseover)="onHover('continuar')"
       [style.z-index]="!continuar ? 1: 0" class="responsive-img continuar-off" alt="">
     <img src="assets/imgs/ui/SALFA_UI_BTN_CONTINUAR_HOVER.png" (mouseleave)="onHover('continuar')" (click)="goTo()"
       [style.z-index]="continuar ? 1: 0" class="responsive-img continuar-hover" alt="">
+  </div>
+
+<div class="volver">
+    <img src="assets/imgs/ui/SALFA_UI_BTN_VOLVER_OFF.png" (mouseover)="onHover('volver')" [style.z-index]="!volver ? 1: 0"
+      class="responsive-img volver-off" alt="">
+    <img src="assets/imgs/ui/SALFA_UI_BTN_VOLVER_HOVER.png" (mouseleave)="onHover('volver')" (click)="back()"
+      [style.z-index]="volver ? 1: 0" class="responsive-img volver-hover" alt="">
   </div>
 </ng-container>
 <ng-container *ngIf="url === '/home'">

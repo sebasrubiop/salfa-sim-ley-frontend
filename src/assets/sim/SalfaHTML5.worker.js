@@ -33,7 +33,7 @@ function assert(condition, text) {
 
 // When error objects propagate from Web Worker to main thread, they lose helpful call stack and thread ID information, so print out errors early here,
 // before that happens.
-this.addEventListener('error', function(e) {
+this.addEventListener('error', function (e) {
   if (e.message.indexOf('SimulateInfiniteLoop') != -1) return e.preventDefault();
 
   var errorSource = ' in ' + e.filename + ':' + e.lineno + ':' + e.colno;
@@ -48,7 +48,7 @@ function threadPrintErr() {
 }
 function threadAlert() {
   var text = Array.prototype.slice.call(arguments).join(' ');
-  postMessage({cmd: 'alert', text: text, threadId: selfThreadId});
+  postMessage({ cmd: 'alert', text: text, threadId: selfThreadId });
 }
 var err = threadPrintErr;
 this.alert = threadAlert;
@@ -66,7 +66,7 @@ function resetPrototype(constructor, attrs) {
   return object;
 }
 
-Module['instantiateWasm'] = function(info, receiveInstance) {
+Module['instantiateWasm'] = function (info, receiveInstance) {
   // Instantiate from the module posted from the main thread.
   // We can just use sync instantiation in the worker.
   var instance = new WebAssembly.Instance(Module['wasmModule'], info);
@@ -76,15 +76,13 @@ Module['instantiateWasm'] = function(info, receiveInstance) {
   return instance.exports;
 };
 
-
-function getJSMessage(query)
-{
-  console.log(query);
-    var test = 'test';
-    return test;
+function getJSMessage(query) {
+  console.log('getJSMessage', query);
+  postMessage({ cmd: 'message', text: query, threadId: selfThreadId });
+  return '';
 }
 
-this.onmessage = function(e) {
+this.onmessage = function (e) {
   try {
     if (e.data.cmd === 'load') { // Preload command that is called once per worker to parse and load the Emscripten code.
       // Initialize the thread-local field(s):
@@ -151,16 +149,16 @@ this.onmessage = function(e) {
 
         Module['checkStackCookie']();
 
-      } catch(e) {
+      } catch (e) {
         if (e === 'Canceled!') {
           PThread.threadCancel();
           return;
         } else if (e === 'SimulateInfiniteLoop' || e === 'pthread_exit') {
           return;
         } else {
-          Atomics.store(HEAPU32, (threadInfoStruct + 4 /*C_STRUCTS.pthread.threadExitCode*/ ) >> 2, (e instanceof Module['ExitStatus']) ? e.status : -2 /*A custom entry specific to Emscripten denoting that the thread crashed.*/);
-          Atomics.store(HEAPU32, (threadInfoStruct + 0 /*C_STRUCTS.pthread.threadStatus*/ ) >> 2, 1); // Mark the thread as no longer running.
-          if (typeof(Module['_emscripten_futex_wake']) !== "function") {
+          Atomics.store(HEAPU32, (threadInfoStruct + 4 /*C_STRUCTS.pthread.threadExitCode*/) >> 2, (e instanceof Module['ExitStatus']) ? e.status : -2 /*A custom entry specific to Emscripten denoting that the thread crashed.*/);
+          Atomics.store(HEAPU32, (threadInfoStruct + 0 /*C_STRUCTS.pthread.threadStatus*/) >> 2, 1); // Mark the thread as no longer running.
+          if (typeof (Module['_emscripten_futex_wake']) !== "function") {
             err("Thread Initialisation failed.");
             throw e;
           }
@@ -185,7 +183,7 @@ this.onmessage = function(e) {
       err('worker.js received unknown command ' + e.data.cmd);
       console.error(e.data);
     }
-  } catch(e) {
+  } catch (e) {
     console.error('worker.js onmessage() captured an uncaught exception: ' + e);
     console.error(e.stack);
     throw e;

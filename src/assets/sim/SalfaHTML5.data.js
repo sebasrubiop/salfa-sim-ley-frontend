@@ -173,6 +173,6 @@ Module['FS_createPath']('/SalfaHTML5/Content', 'Paks', true, true);
   }
 
  }
- loadPackage({"files": [{"filename": "/Manifest_NonUFSFiles_HTML5.txt", "start": 0, "end": 53, "audio": 0}, {"filename": "/UE4CommandLine.txt", "start": 53, "end": 93, "audio": 0}, {"filename": "/SalfaHTML5/Content/Paks/SalfaHTML5-HTML5.pak", "start": 93, "end": 91246278, "audio": 0}], "remote_package_size": 91246278, "package_uuid": "a835a05f-2678-451c-8ecc-4ea697e4b089"});
+ loadPackage({"files": [{"filename": "/Manifest_NonUFSFiles_HTML5.txt", "start": 0, "end": 53, "audio": 0}, {"filename": "/UE4CommandLine.txt", "start": 53, "end": 93, "audio": 0}, {"filename": "/SalfaHTML5/Content/Paks/SalfaHTML5-HTML5.pak", "start": 93, "end": 91237370, "audio": 0}], "remote_package_size": 91237370, "package_uuid": "5d45a6c7-ac4d-41b0-a6e6-a77b4a272c36"});
 
 })();
